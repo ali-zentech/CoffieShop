@@ -13,7 +13,7 @@ const CoffeeData = [
       {size: 'M', price: '3.15', currency: '$'},
       {size: 'L', price: '4.29', currency: '$'},
     ],
-    average_rating: 4.7,
+    average_rating: 4.6,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
