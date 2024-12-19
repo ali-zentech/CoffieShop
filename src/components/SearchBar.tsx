@@ -7,7 +7,7 @@ import {
   View,
 } from 'react-native';
 import React, {Dispatch, SetStateAction} from 'react';
-import CustomIcons from './customIcons';
+import CustomIcons from './CustomIcons';
 import {
   BORDERRADIUS,
   COLORS,

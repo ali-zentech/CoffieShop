@@ -4,12 +4,12 @@ import HomeScreen from '../screens/HomeScreen';
 import CartScreen from '../screens/CartScreen';
 import FavouritesScreen from '../screens/FavouritesScreen';
 import OrderHistoryScreen from '../screens/OrderHistoryScreen';
-import customIcons from '../components/customIcons';
+import customIcons from '../components/CustomIcons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {COLORS} from '../theme/theme';
 import {BlurView} from '@react-native-community/blur';
 import {Icon} from 'react-native-vector-icons/Icon';
-import CustomIcons from '../components/customIcons';
+import CustomIcons from '../components/CustomIcons';
 
 const TabNavigation = createBottomTabNavigator();
 const TabNavigator = () => {

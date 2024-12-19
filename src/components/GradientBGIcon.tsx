@@ -2,7 +2,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import {COLORS, SPACING} from '../theme/theme';
-import CustomIcons from './customIcons';
+import CustomIcons from './CustomIcons';
 
 interface GradientIconProps {
   name: string;

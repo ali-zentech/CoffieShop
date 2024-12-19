@@ -6,6 +6,7 @@ import AsyncStorage, {
 } from '@react-native-async-storage/async-storage';
 import CoffeeData from '../data/CoffieData';
 import BeansData from '../data/BeansData';
+import CartItem from '../components/CartItem';
 
 export const useStore = create(
   persist(
@@ -36,15 +37,36 @@ export const useStore = create(
                 if (size == false) {
                   state.CartList[i].prices.push(cartItem.prices[0]);
                 }
-                state.CartList[i].prices.sort((a: any, b: any) => {
-                  if (a.size > b.size) {
-                    return -1;
-                  }
-                  if (a.size < b.size) {
-                    return 1;
-                  }
-                  return 0;
-                });
+                if (cartItem['type'] == 'Coffee') {
+                  // alphabetical sort
+                  state.CartList[i].prices.sort((a: any, b: any) => {
+                    if (a.size > b.size) {
+                      return -1;
+                    }
+                    if (a.size < b.size) {
+                      return 1;
+                    }
+                    return 0;
+                  });
+                } else {
+                  state.CartList[i].prices.sort((a: any, b: any) => {
+                    const parseSize = (size: string) => {
+                      const number = parseFloat(size);
+                      if (size.includes('Kg')) {
+                        return number * 1000;
+                      }
+                      return number;
+                    };
+                    const sizeA = parseSize(a.size);
+                    const sizeB = parseSize(b.size);
+
+                    // Sorting logic
+                    if (sizeA > sizeB) return 1;
+                    if (sizeA < sizeB) return -1;
+                    return 0;
+                  });
+                }
+
                 break;
               }
             }
@@ -60,11 +82,6 @@ export const useStore = create(
             for (let i = 0; i < state.CartList.length; i++) {
               let tempprice = 0;
               for (let j = 0; j < state.CartList[i].prices.length; j++) {
-                console.log(
-                  state.CartList[i].prices[j].price +
-                    ' === ' +
-                    state.CartList[i].prices[j].quantity,
-                );
                 tempprice =
                   tempprice +
                   parseFloat(state.CartList[i].prices[j].price) *

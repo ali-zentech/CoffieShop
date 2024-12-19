@@ -223,7 +223,6 @@ const HomeScreen = ({navigation}: any) => {
           ]}
           keyExtractor={item => item.id}
           renderItem={({item}) => {
-            console.log(item.prices);
             return (
               <TouchableOpacity
                 onPress={() => {

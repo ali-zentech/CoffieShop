@@ -16,7 +16,7 @@ import {
   SPACING,
 } from '../theme/theme';
 import HeaderBar from './HeaderBar';
-import CustomIcons from './customIcons';
+import CustomIcons from './CustomIcons';
 
 interface ItemInfo {
   imagelink_portrait: ImageProps;

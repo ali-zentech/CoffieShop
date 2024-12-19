@@ -16,7 +16,7 @@ import {
   FONTSIZE,
   SPACING,
 } from '../theme/theme';
-import CustomIcons from './customIcons';
+import CustomIcons from './CustomIcons';
 import BGIcon from './BGIcon';
 const CARD_WIDTH = Dimensions.get('window').width * 0.32;
 interface CoffieCardProps {
@@ -43,7 +43,6 @@ const CoffeeCard: React.FC<CoffieCardProps> = ({
   price,
   buttonPressHandler,
 }) => {
-  console.log(price);
   return (
     <LinearGradient
       start={{x: 0, y: 0}}
